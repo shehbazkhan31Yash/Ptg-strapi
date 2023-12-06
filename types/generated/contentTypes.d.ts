@@ -677,6 +677,61 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiAccordianListAccordianList extends Schema.CollectionType {
+  collectionName: 'accordian_lists';
+  info: {
+    singularName: 'accordian-list';
+    pluralName: 'accordian-lists';
+    displayName: 'Accordian_List';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    description: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::accordian-list.accordian-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::accordian-list.accordian-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::accordian-list.accordian-list',
+      'oneToMany',
+      'api::accordian-list.accordian-list'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiCardListCardList extends Schema.CollectionType {
   collectionName: 'card_lists';
   info: {
@@ -1181,6 +1236,107 @@ export interface ApiDownloadFileListDownloadFileList
   };
 }
 
+export interface ApiExpMonthExpMonth extends Schema.CollectionType {
+  collectionName: 'exp_months';
+  info: {
+    singularName: 'exp-month';
+    pluralName: 'exp-months';
+    displayName: 'Exp_Month';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::exp-month.exp-month',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::exp-month.exp-month',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::exp-month.exp-month',
+      'oneToMany',
+      'api::exp-month.exp-month'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiFileTypeFileType extends Schema.CollectionType {
+  collectionName: 'file_types';
+  info: {
+    singularName: 'file-type';
+    pluralName: 'file-types';
+    displayName: 'File_Type';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    value: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::file-type.file-type',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::file-type.file-type',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::file-type.file-type',
+      'oneToMany',
+      'api::file-type.file-type'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiGenderListGenderList extends Schema.CollectionType {
   collectionName: 'gender_lists';
   info: {
@@ -1589,6 +1745,111 @@ export interface ApiTableListTableList extends Schema.CollectionType {
   };
 }
 
+export interface ApiUserListUserList extends Schema.CollectionType {
+  collectionName: 'user_lists';
+  info: {
+    singularName: 'user-list';
+    pluralName: 'user-lists';
+    displayName: 'User_List';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    username: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    email: Attribute.Email &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    provider: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    confirmed: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    blocked: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    role: Attribute.JSON &
+      Attribute.Required &
+      Attribute.Private &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    gender: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    city: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    dob: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::user-list.user-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::user-list.user-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::user-list.user-list',
+      'oneToMany',
+      'api::user-list.user-list'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1605,6 +1866,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::accordian-list.accordian-list': ApiAccordianListAccordianList;
       'api::card-list.card-list': ApiCardListCardList;
       'api::checkbox-list.checkbox-list': ApiCheckboxListCheckboxList;
       'api::city-list.city-list': ApiCityListCityList;
@@ -1613,12 +1875,15 @@ declare module '@strapi/types' {
       'api::d3-line-list.d3-line-list': ApiD3LineListD3LineList;
       'api::d3-pie-list.d3-pie-list': ApiD3PieListD3PieList;
       'api::download-file-list.download-file-list': ApiDownloadFileListDownloadFileList;
+      'api::exp-month.exp-month': ApiExpMonthExpMonth;
+      'api::file-type.file-type': ApiFileTypeFileType;
       'api::gender-list.gender-list': ApiGenderListGenderList;
       'api::gender-list-select.gender-list-select': ApiGenderListSelectGenderListSelect;
       'api::lang-list.lang-list': ApiLangListLangList;
       'api::salutation-list.salutation-list': ApiSalutationListSalutationList;
       'api::state-list.state-list': ApiStateListStateList;
       'api::table-list.table-list': ApiTableListTableList;
+      'api::user-list.user-list': ApiUserListUserList;
     }
   }
 }
