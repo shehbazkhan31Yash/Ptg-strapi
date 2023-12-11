@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stacked_column_lists",
+  "info": {
+    "singularName": "stacked-column-list",
+    "pluralName": "stacked-column-lists",
+    "displayName": "Stacked_Column_List"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "data": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    }
+  }
+}

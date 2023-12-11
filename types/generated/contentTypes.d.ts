@@ -732,6 +732,68 @@ export interface ApiAccordianListAccordianList extends Schema.CollectionType {
   };
 }
 
+export interface ApiBarChart3DBarChart3D extends Schema.CollectionType {
+  collectionName: 'bar_chart_3ds';
+  info: {
+    singularName: 'bar-chart-3d';
+    pluralName: 'bar-chart-3ds';
+    displayName: 'Bar_Chart_3d';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    data: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    categories: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::bar-chart-3d.bar-chart-3d',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::bar-chart-3d.bar-chart-3d',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::bar-chart-3d.bar-chart-3d',
+      'oneToMany',
+      'api::bar-chart-3d.bar-chart-3d'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiCardListCardList extends Schema.CollectionType {
   collectionName: 'card_lists';
   info: {
@@ -1161,6 +1223,53 @@ export interface ApiD3PieListD3PieList extends Schema.CollectionType {
       'api::d3-pie-list.d3-pie-list',
       'oneToMany',
       'api::d3-pie-list.d3-pie-list'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiDoneListDoneList extends Schema.CollectionType {
+  collectionName: 'done_lists';
+  info: {
+    singularName: 'done-list';
+    pluralName: 'done-lists';
+    displayName: 'Done_List';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    done: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::done-list.done-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::done-list.done-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::done-list.done-list',
+      'oneToMany',
+      'api::done-list.done-list'
     >;
     locale: Attribute.String;
   };
@@ -1743,6 +1852,136 @@ export interface ApiLangListLangList extends Schema.CollectionType {
   };
 }
 
+export interface ApiLineBarListLineBarList extends Schema.CollectionType {
+  collectionName: 'line_bar_lists';
+  info: {
+    singularName: 'line-bar-list';
+    pluralName: 'line-bar-lists';
+    displayName: 'Line_Bar_List';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    type: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    valuesuffix: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    data: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::line-bar-list.line-bar-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::line-bar-list.line-bar-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::line-bar-list.line-bar-list',
+      'oneToMany',
+      'api::line-bar-list.line-bar-list'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiLineChart2DLineChart2D extends Schema.CollectionType {
+  collectionName: 'line_chart_2ds';
+  info: {
+    singularName: 'line-chart-2d';
+    pluralName: 'line-chart-2ds';
+    displayName: 'Line_Chart_2d';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    data: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    categories: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::line-chart-2d.line-chart-2d',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::line-chart-2d.line-chart-2d',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::line-chart-2d.line-chart-2d',
+      'oneToMany',
+      'api::line-chart-2d.line-chart-2d'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiSalutationListSalutationList extends Schema.CollectionType {
   collectionName: 'salutation_lists';
   info: {
@@ -1800,6 +2039,61 @@ export interface ApiSalutationListSalutationList extends Schema.CollectionType {
       'api::salutation-list.salutation-list',
       'oneToMany',
       'api::salutation-list.salutation-list'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiStackedColumnListStackedColumnList
+  extends Schema.CollectionType {
+  collectionName: 'stacked_column_lists';
+  info: {
+    singularName: 'stacked-column-list';
+    pluralName: 'stacked-column-lists';
+    displayName: 'Stacked_Column_List';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    data: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::stacked-column-list.stacked-column-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::stacked-column-list.stacked-column-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::stacked-column-list.stacked-column-list',
+      'oneToMany',
+      'api::stacked-column-list.stacked-column-list'
     >;
     locale: Attribute.String;
   };
@@ -2147,6 +2441,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::accordian-list.accordian-list': ApiAccordianListAccordianList;
+      'api::bar-chart-3d.bar-chart-3d': ApiBarChart3DBarChart3D;
       'api::card-list.card-list': ApiCardListCardList;
       'api::checkbox-list.checkbox-list': ApiCheckboxListCheckboxList;
       'api::city-list.city-list': ApiCityListCityList;
@@ -2154,6 +2449,7 @@ declare module '@strapi/types' {
       'api::d3-bar-list.d3-bar-list': ApiD3BarListD3BarList;
       'api::d3-line-list.d3-line-list': ApiD3LineListD3LineList;
       'api::d3-pie-list.d3-pie-list': ApiD3PieListD3PieList;
+      'api::done-list.done-list': ApiDoneListDoneList;
       'api::download-file-list.download-file-list': ApiDownloadFileListDownloadFileList;
       'api::drag-and-users-list.drag-and-users-list': ApiDragAndUsersListDragAndUsersList;
       'api::drag-drop-list.drag-drop-list': ApiDragDropListDragDropList;
@@ -2164,7 +2460,10 @@ declare module '@strapi/types' {
       'api::high-charts-line-list.high-charts-line-list': ApiHighChartsLineListHighChartsLineList;
       'api::higher-charts-pie-list.higher-charts-pie-list': ApiHigherChartsPieListHigherChartsPieList;
       'api::lang-list.lang-list': ApiLangListLangList;
+      'api::line-bar-list.line-bar-list': ApiLineBarListLineBarList;
+      'api::line-chart-2d.line-chart-2d': ApiLineChart2DLineChart2D;
       'api::salutation-list.salutation-list': ApiSalutationListSalutationList;
+      'api::stacked-column-list.stacked-column-list': ApiStackedColumnListStackedColumnList;
       'api::state-list.state-list': ApiStateListStateList;
       'api::table-list.table-list': ApiTableListTableList;
       'api::todo-list.todo-list': ApiTodoListTodoList;
