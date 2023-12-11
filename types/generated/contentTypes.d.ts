@@ -1236,6 +1236,116 @@ export interface ApiDownloadFileListDownloadFileList
   };
 }
 
+export interface ApiDragAndUsersListDragAndUsersList
+  extends Schema.CollectionType {
+  collectionName: 'drag_and_users_lists';
+  info: {
+    singularName: 'drag-and-users-list';
+    pluralName: 'drag-and-users-lists';
+    displayName: 'DragAndUsers_List';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::drag-and-users-list.drag-and-users-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::drag-and-users-list.drag-and-users-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::drag-and-users-list.drag-and-users-list',
+      'oneToMany',
+      'api::drag-and-users-list.drag-and-users-list'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiDragDropListDragDropList extends Schema.CollectionType {
+  collectionName: 'drag_drop_lists';
+  info: {
+    singularName: 'drag-drop-list';
+    pluralName: 'drag-drop-lists';
+    displayName: 'Drag_Drop_List';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    parent: Attribute.BigInteger &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    droppable: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    text: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::drag-drop-list.drag-drop-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::drag-drop-list.drag-drop-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::drag-drop-list.drag-drop-list',
+      'oneToMany',
+      'api::drag-drop-list.drag-drop-list'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiExpMonthExpMonth extends Schema.CollectionType {
   collectionName: 'exp_months';
   info: {
@@ -1450,6 +1560,122 @@ export interface ApiGenderListSelectGenderListSelect
       'api::gender-list-select.gender-list-select',
       'oneToMany',
       'api::gender-list-select.gender-list-select'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiHighChartsLineListHighChartsLineList
+  extends Schema.CollectionType {
+  collectionName: 'high_charts_line_lists';
+  info: {
+    singularName: 'high-charts-line-list';
+    pluralName: 'high-charts-line-lists';
+    displayName: 'HighChartsLine_List';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    series: Attribute.BigInteger &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::high-charts-line-list.high-charts-line-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::high-charts-line-list.high-charts-line-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::high-charts-line-list.high-charts-line-list',
+      'oneToMany',
+      'api::high-charts-line-list.high-charts-line-list'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiHigherChartsPieListHigherChartsPieList
+  extends Schema.CollectionType {
+  collectionName: 'higher_charts_pie_lists';
+  info: {
+    singularName: 'higher-charts-pie-list';
+    pluralName: 'higher-charts-pie-lists';
+    displayName: 'HigherChartsPie_List';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    y: Attribute.Decimal &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    sliced: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    selected: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::higher-charts-pie-list.higher-charts-pie-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::higher-charts-pie-list.higher-charts-pie-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::higher-charts-pie-list.higher-charts-pie-list',
+      'oneToMany',
+      'api::higher-charts-pie-list.higher-charts-pie-list'
     >;
     locale: Attribute.String;
   };
@@ -1745,6 +1971,53 @@ export interface ApiTableListTableList extends Schema.CollectionType {
   };
 }
 
+export interface ApiTodoListTodoList extends Schema.CollectionType {
+  collectionName: 'todo_lists';
+  info: {
+    singularName: 'todo-list';
+    pluralName: 'todo-lists';
+    displayName: 'Todo_List';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    content: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::todo-list.todo-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::todo-list.todo-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::todo-list.todo-list',
+      'oneToMany',
+      'api::todo-list.todo-list'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiUserListUserList extends Schema.CollectionType {
   collectionName: 'user_lists';
   info: {
@@ -1826,6 +2099,13 @@ export interface ApiUserListUserList extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    roles: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1875,14 +2155,19 @@ declare module '@strapi/types' {
       'api::d3-line-list.d3-line-list': ApiD3LineListD3LineList;
       'api::d3-pie-list.d3-pie-list': ApiD3PieListD3PieList;
       'api::download-file-list.download-file-list': ApiDownloadFileListDownloadFileList;
+      'api::drag-and-users-list.drag-and-users-list': ApiDragAndUsersListDragAndUsersList;
+      'api::drag-drop-list.drag-drop-list': ApiDragDropListDragDropList;
       'api::exp-month.exp-month': ApiExpMonthExpMonth;
       'api::file-type.file-type': ApiFileTypeFileType;
       'api::gender-list.gender-list': ApiGenderListGenderList;
       'api::gender-list-select.gender-list-select': ApiGenderListSelectGenderListSelect;
+      'api::high-charts-line-list.high-charts-line-list': ApiHighChartsLineListHighChartsLineList;
+      'api::higher-charts-pie-list.higher-charts-pie-list': ApiHigherChartsPieListHigherChartsPieList;
       'api::lang-list.lang-list': ApiLangListLangList;
       'api::salutation-list.salutation-list': ApiSalutationListSalutationList;
       'api::state-list.state-list': ApiStateListStateList;
       'api::table-list.table-list': ApiTableListTableList;
+      'api::todo-list.todo-list': ApiTodoListTodoList;
       'api::user-list.user-list': ApiUserListUserList;
     }
   }
