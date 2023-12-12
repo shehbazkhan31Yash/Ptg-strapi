@@ -1852,6 +1852,68 @@ export interface ApiLangListLangList extends Schema.CollectionType {
   };
 }
 
+export interface ApiLine3DOptionsListLine3DOptionsList
+  extends Schema.CollectionType {
+  collectionName: 'line_3d_options_lists';
+  info: {
+    singularName: 'line-3d-options-list';
+    pluralName: 'line-3d-options-lists';
+    displayName: 'Line_3d_Options_List';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    data: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    categories: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::line-3d-options-list.line-3d-options-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::line-3d-options-list.line-3d-options-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::line-3d-options-list.line-3d-options-list',
+      'oneToMany',
+      'api::line-3d-options-list.line-3d-options-list'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiLineBarListLineBarList extends Schema.CollectionType {
   collectionName: 'line_bar_lists';
   info: {
@@ -2348,6 +2410,7 @@ declare module '@strapi/types' {
       'api::high-charts-line-list.high-charts-line-list': ApiHighChartsLineListHighChartsLineList;
       'api::higher-charts-pie-list.higher-charts-pie-list': ApiHigherChartsPieListHigherChartsPieList;
       'api::lang-list.lang-list': ApiLangListLangList;
+      'api::line-3d-options-list.line-3d-options-list': ApiLine3DOptionsListLine3DOptionsList;
       'api::line-bar-list.line-bar-list': ApiLineBarListLineBarList;
       'api::line-chart-2d.line-chart-2d': ApiLineChart2DLineChart2D;
       'api::salutation-list.salutation-list': ApiSalutationListSalutationList;
