@@ -1674,6 +1674,124 @@ export interface ApiGenderListSelectGenderListSelect
   };
 }
 
+export interface ApiHighChartColumnListHighChartColumnList
+  extends Schema.CollectionType {
+  collectionName: 'high_chart_column_lists';
+  info: {
+    singularName: 'high-chart-column-list';
+    pluralName: 'high-chart-column-lists';
+    displayName: 'High_Chart_Column_List';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    data: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    categories: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::high-chart-column-list.high-chart-column-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::high-chart-column-list.high-chart-column-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::high-chart-column-list.high-chart-column-list',
+      'oneToMany',
+      'api::high-chart-column-list.high-chart-column-list'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiHighChartMultiLineListHighChartMultiLineList
+  extends Schema.CollectionType {
+  collectionName: 'high_chart_multi_line_lists';
+  info: {
+    singularName: 'high-chart-multi-line-list';
+    pluralName: 'high-chart-multi-line-lists';
+    displayName: 'High_Chart_Multi_Line_List';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    data: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::high-chart-multi-line-list.high-chart-multi-line-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::high-chart-multi-line-list.high-chart-multi-line-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::high-chart-multi-line-list.high-chart-multi-line-list',
+      'oneToMany',
+      'api::high-chart-multi-line-list.high-chart-multi-line-list'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiHighChartsLineListHighChartsLineList
   extends Schema.CollectionType {
   collectionName: 'high_charts_line_lists';
@@ -2511,6 +2629,8 @@ declare module '@strapi/types' {
       'api::file-type.file-type': ApiFileTypeFileType;
       'api::gender-list.gender-list': ApiGenderListGenderList;
       'api::gender-list-select.gender-list-select': ApiGenderListSelectGenderListSelect;
+      'api::high-chart-column-list.high-chart-column-list': ApiHighChartColumnListHighChartColumnList;
+      'api::high-chart-multi-line-list.high-chart-multi-line-list': ApiHighChartMultiLineListHighChartMultiLineList;
       'api::high-charts-line-list.high-charts-line-list': ApiHighChartsLineListHighChartsLineList;
       'api::higher-charts-pie-list.higher-charts-pie-list': ApiHigherChartsPieListHigherChartsPieList;
       'api::lang-list.lang-list': ApiLangListLangList;

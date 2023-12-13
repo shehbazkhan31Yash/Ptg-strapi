@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "high_chart_multi_line_lists",
+  "info": {
+    "singularName": "high-chart-multi-line-list",
+    "pluralName": "high-chart-multi-line-lists",
+    "displayName": "High_Chart_Multi_Line_List"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "data": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    }
+  }
+}
