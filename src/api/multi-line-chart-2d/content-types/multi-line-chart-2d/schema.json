@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "stacked_column_lists",
+  "collectionName": "multi_line_chart_2ds",
   "info": {
-    "singularName": "stacked-column-list",
-    "pluralName": "stacked-column-lists",
-    "displayName": "Stacked_Column_List",
+    "singularName": "multi-line-chart-2d",
+    "pluralName": "multi-line-chart-2ds",
+    "displayName": "Multi_Line_Chart_2d",
     "description": ""
   },
   "options": {
@@ -26,15 +26,6 @@
       "required": true
     },
     "data": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string",
-      "required": true
-    },
-    "title": {
       "pluginOptions": {
         "i18n": {
           "localized": true

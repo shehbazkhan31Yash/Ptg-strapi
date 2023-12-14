@@ -2183,6 +2183,69 @@ export interface ApiLineChart2DLineChart2D extends Schema.CollectionType {
   };
 }
 
+export interface ApiMultiLineChart2DMultiLineChart2D
+  extends Schema.CollectionType {
+  collectionName: 'multi_line_chart_2ds';
+  info: {
+    singularName: 'multi-line-chart-2d';
+    pluralName: 'multi-line-chart-2ds';
+    displayName: 'Multi_Line_Chart_2d';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    data: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    categories: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::multi-line-chart-2d.multi-line-chart-2d',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::multi-line-chart-2d.multi-line-chart-2d',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::multi-line-chart-2d.multi-line-chart-2d',
+      'oneToMany',
+      'api::multi-line-chart-2d.multi-line-chart-2d'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiSalutationListSalutationList extends Schema.CollectionType {
   collectionName: 'salutation_lists';
   info: {
@@ -2252,6 +2315,7 @@ export interface ApiStackedColumnListStackedColumnList
     singularName: 'stacked-column-list';
     pluralName: 'stacked-column-lists';
     displayName: 'Stacked_Column_List';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -2270,6 +2334,20 @@ export interface ApiStackedColumnListStackedColumnList
         };
       }>;
     data: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    categories: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2658,6 +2736,7 @@ declare module '@strapi/types' {
       'api::line-3d-options-list.line-3d-options-list': ApiLine3DOptionsListLine3DOptionsList;
       'api::line-bar-list.line-bar-list': ApiLineBarListLineBarList;
       'api::line-chart-2d.line-chart-2d': ApiLineChart2DLineChart2D;
+      'api::multi-line-chart-2d.multi-line-chart-2d': ApiMultiLineChart2DMultiLineChart2D;
       'api::salutation-list.salutation-list': ApiSalutationListSalutationList;
       'api::stacked-column-list.stacked-column-list': ApiStackedColumnListStackedColumnList;
       'api::state-list.state-list': ApiStateListStateList;
