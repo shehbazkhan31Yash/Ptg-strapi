@@ -16,24 +16,6 @@
     }
   },
   "attributes": {
-    "name": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string",
-      "required": true
-    },
-    "data": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string",
-      "required": true
-    },
     "title": {
       "pluginOptions": {
         "i18n": {
@@ -50,6 +32,15 @@
         }
       },
       "type": "string",
+      "required": true
+    },
+    "series": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "json",
       "required": true
     }
   }

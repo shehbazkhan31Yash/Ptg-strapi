@@ -2246,6 +2246,88 @@ export interface ApiMultiLineChart2DMultiLineChart2D
   };
 }
 
+export interface ApiPieChart3DPieChart3D extends Schema.CollectionType {
+  collectionName: 'pie_chart_3ds';
+  info: {
+    singularName: 'pie-chart-3d';
+    pluralName: 'pie-chart-3ds';
+    displayName: 'Pie_Chart_3d';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    firefox: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ie: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    safari: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    opera: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    others: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    data: Attribute.JSON &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::pie-chart-3d.pie-chart-3d',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::pie-chart-3d.pie-chart-3d',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::pie-chart-3d.pie-chart-3d',
+      'oneToMany',
+      'api::pie-chart-3d.pie-chart-3d'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiSalutationListSalutationList extends Schema.CollectionType {
   collectionName: 'salutation_lists';
   info: {
@@ -2326,20 +2408,6 @@ export interface ApiStackedColumnListStackedColumnList
     };
   };
   attributes: {
-    name: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    data: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     title: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -2348,6 +2416,13 @@ export interface ApiStackedColumnListStackedColumnList
         };
       }>;
     categories: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    series: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2737,6 +2812,7 @@ declare module '@strapi/types' {
       'api::line-bar-list.line-bar-list': ApiLineBarListLineBarList;
       'api::line-chart-2d.line-chart-2d': ApiLineChart2DLineChart2D;
       'api::multi-line-chart-2d.multi-line-chart-2d': ApiMultiLineChart2DMultiLineChart2D;
+      'api::pie-chart-3d.pie-chart-3d': ApiPieChart3DPieChart3D;
       'api::salutation-list.salutation-list': ApiSalutationListSalutationList;
       'api::stacked-column-list.stacked-column-list': ApiStackedColumnListStackedColumnList;
       'api::state-list.state-list': ApiStateListStateList;
