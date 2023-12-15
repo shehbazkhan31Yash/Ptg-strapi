@@ -856,6 +856,54 @@ export interface ApiCardListCardList extends Schema.CollectionType {
   };
 }
 
+export interface ApiCheckboxArrayListCheckboxArrayList
+  extends Schema.CollectionType {
+  collectionName: 'checkbox_array_lists';
+  info: {
+    singularName: 'checkbox-array-list';
+    pluralName: 'checkbox-array-lists';
+    displayName: 'Checkbox_Array_List';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    data: Attribute.JSON &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::checkbox-array-list.checkbox-array-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::checkbox-array-list.checkbox-array-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::checkbox-array-list.checkbox-array-list',
+      'oneToMany',
+      'api::checkbox-array-list.checkbox-array-list'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiCheckboxListCheckboxList extends Schema.CollectionType {
   collectionName: 'checkbox_lists';
   info: {
@@ -2790,6 +2838,7 @@ declare module '@strapi/types' {
       'api::accordian-list.accordian-list': ApiAccordianListAccordianList;
       'api::bar-chart-3d.bar-chart-3d': ApiBarChart3DBarChart3D;
       'api::card-list.card-list': ApiCardListCardList;
+      'api::checkbox-array-list.checkbox-array-list': ApiCheckboxArrayListCheckboxArrayList;
       'api::checkbox-list.checkbox-list': ApiCheckboxListCheckboxList;
       'api::city-list.city-list': ApiCityListCityList;
       'api::country-list.country-list': ApiCountryListCountryList;
