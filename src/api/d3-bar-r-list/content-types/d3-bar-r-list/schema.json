@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "download_file_lists",
+  "collectionName": "d3_bar_r_lists",
   "info": {
-    "singularName": "download-file-list",
-    "pluralName": "download-file-lists",
-    "displayName": "Download_File_List",
-    "description": ""
+    "singularName": "d3-bar-r-list",
+    "pluralName": "d3-bar-r-lists",
+    "displayName": "D3Bar_R_List"
   },
   "options": {
     "draftAndPublish": true
@@ -16,7 +15,7 @@
     }
   },
   "attributes": {
-    "data": {
+    "chart": {
       "pluginOptions": {
         "i18n": {
           "localized": true

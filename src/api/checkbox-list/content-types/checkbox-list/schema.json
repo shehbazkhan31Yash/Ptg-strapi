@@ -16,23 +16,14 @@
     }
   },
   "attributes": {
-    "name": {
+    "data": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "string",
+      "type": "json",
       "required": true
-    },
-    "parentId": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true,
-      "type": "biginteger"
     }
   }
 }

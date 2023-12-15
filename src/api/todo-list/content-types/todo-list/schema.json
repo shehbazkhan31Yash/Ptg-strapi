@@ -4,7 +4,8 @@
   "info": {
     "singularName": "todo-list",
     "pluralName": "todo-lists",
-    "displayName": "Todo_List"
+    "displayName": "Todo_List",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,13 +16,13 @@
     }
   },
   "attributes": {
-    "content": {
+    "todo": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "string",
+      "type": "json",
       "required": true
     }
   }

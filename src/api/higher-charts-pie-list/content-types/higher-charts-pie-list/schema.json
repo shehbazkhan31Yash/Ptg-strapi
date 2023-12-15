@@ -16,39 +16,14 @@
     }
   },
   "attributes": {
-    "name": {
+    "chart": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "string",
+      "type": "json",
       "required": true
-    },
-    "y": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true,
-      "type": "decimal"
-    },
-    "sliced": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "boolean"
-    },
-    "selected": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "boolean"
     }
   }
 }

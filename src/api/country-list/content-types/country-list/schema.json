@@ -16,31 +16,13 @@
     }
   },
   "attributes": {
-    "value": {
+    "country": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "string",
-      "required": true
-    },
-    "name": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string",
-      "required": true
-    },
-    "label": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string",
+      "type": "json",
       "required": true
     }
   }

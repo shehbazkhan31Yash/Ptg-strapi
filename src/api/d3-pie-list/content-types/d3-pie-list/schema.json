@@ -16,40 +16,13 @@
     }
   },
   "attributes": {
-    "Framework": {
+    "piedata": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "string",
-      "required": true
-    },
-    "Stars": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string",
-      "required": true
-    },
-    "Released": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string",
-      "required": true
-    },
-    "color": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string",
+      "type": "json",
       "required": true
     }
   }

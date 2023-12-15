@@ -4,7 +4,8 @@
   "info": {
     "singularName": "exp-month",
     "pluralName": "exp-months",
-    "displayName": "Exp_Month"
+    "displayName": "Exp_Month",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,13 +16,13 @@
     }
   },
   "attributes": {
-    "name": {
+    "data": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "string",
+      "type": "json",
       "required": true
     }
   }

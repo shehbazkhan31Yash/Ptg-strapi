@@ -4,7 +4,8 @@
   "info": {
     "singularName": "high-charts-line-list",
     "pluralName": "high-charts-line-lists",
-    "displayName": "HighChartsLine_List"
+    "displayName": "HighChartsLine_List",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,13 +16,13 @@
     }
   },
   "attributes": {
-    "series": {
+    "chart": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "biginteger",
+      "type": "json",
       "required": true
     }
   }

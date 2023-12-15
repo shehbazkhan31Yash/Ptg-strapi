@@ -694,14 +694,7 @@ export interface ApiAccordianListAccordianList extends Schema.CollectionType {
     };
   };
   attributes: {
-    title: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    description: Attribute.String &
+    data: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -749,21 +742,7 @@ export interface ApiBarChart3DBarChart3D extends Schema.CollectionType {
     };
   };
   attributes: {
-    name: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    data: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    categories: Attribute.String &
+    chart: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -811,21 +790,7 @@ export interface ApiCardListCardList extends Schema.CollectionType {
     };
   };
   attributes: {
-    value: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    label: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    name: Attribute.String &
+    card: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -921,14 +886,7 @@ export interface ApiCheckboxListCheckboxList extends Schema.CollectionType {
     };
   };
   attributes: {
-    name: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    parentId: Attribute.BigInteger &
+    data: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -976,21 +934,7 @@ export interface ApiCityListCityList extends Schema.CollectionType {
     };
   };
   attributes: {
-    value: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    label: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    name: Attribute.String &
+    city: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1038,21 +982,7 @@ export interface ApiCountryListCountryList extends Schema.CollectionType {
     };
   };
   attributes: {
-    value: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    name: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    label: Attribute.String &
+    country: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1100,28 +1030,7 @@ export interface ApiD3BarListD3BarList extends Schema.CollectionType {
     };
   };
   attributes: {
-    Framework: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Stars: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Released: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    color: Attribute.String &
+    data: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1152,6 +1061,53 @@ export interface ApiD3BarListD3BarList extends Schema.CollectionType {
   };
 }
 
+export interface ApiD3BarRListD3BarRList extends Schema.CollectionType {
+  collectionName: 'd3_bar_r_lists';
+  info: {
+    singularName: 'd3-bar-r-list';
+    pluralName: 'd3-bar-r-lists';
+    displayName: 'D3Bar_R_List';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    chart: Attribute.JSON &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::d3-bar-r-list.d3-bar-r-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::d3-bar-r-list.d3-bar-r-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::d3-bar-r-list.d3-bar-r-list',
+      'oneToMany',
+      'api::d3-bar-r-list.d3-bar-r-list'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiD3LineListD3LineList extends Schema.CollectionType {
   collectionName: 'd3_line_lists';
   info: {
@@ -1169,14 +1125,7 @@ export interface ApiD3LineListD3LineList extends Schema.CollectionType {
     };
   };
   attributes: {
-    date: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    value: Attribute.String &
+    data: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1224,28 +1173,7 @@ export interface ApiD3PieListD3PieList extends Schema.CollectionType {
     };
   };
   attributes: {
-    Framework: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Stars: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    Released: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    color: Attribute.String &
+    piedata: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1271,6 +1199,53 @@ export interface ApiD3PieListD3PieList extends Schema.CollectionType {
       'api::d3-pie-list.d3-pie-list',
       'oneToMany',
       'api::d3-pie-list.d3-pie-list'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiD3PieRListD3PieRList extends Schema.CollectionType {
+  collectionName: 'd3_pie_r_lists';
+  info: {
+    singularName: 'd3-pie-r-list';
+    pluralName: 'd3-pie-r-lists';
+    displayName: 'D3Pie_R_List';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    chart: Attribute.JSON &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::d3-pie-r-list.d3-pie-r-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::d3-pie-r-list.d3-pie-r-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::d3-pie-r-list.d3-pie-r-list',
+      'oneToMany',
+      'api::d3-pie-r-list.d3-pie-r-list'
     >;
     locale: Attribute.String;
   };
@@ -1341,28 +1316,7 @@ export interface ApiDownloadFileListDownloadFileList
     };
   };
   attributes: {
-    SN: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    NAME: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    DESIGNATION: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    DEPARTMENT: Attribute.String &
+    data: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1400,6 +1354,7 @@ export interface ApiDragAndUsersListDragAndUsersList
     singularName: 'drag-and-users-list';
     pluralName: 'drag-and-users-lists';
     displayName: 'DragAndUsers_List';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1410,7 +1365,7 @@ export interface ApiDragAndUsersListDragAndUsersList
     };
   };
   attributes: {
-    name: Attribute.String &
+    users: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1458,21 +1413,7 @@ export interface ApiDragDropListDragDropList extends Schema.CollectionType {
     };
   };
   attributes: {
-    parent: Attribute.BigInteger &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    droppable: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    text: Attribute.String &
+    dragdrop: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1509,6 +1450,7 @@ export interface ApiExpMonthExpMonth extends Schema.CollectionType {
     singularName: 'exp-month';
     pluralName: 'exp-months';
     displayName: 'Exp_Month';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1519,7 +1461,7 @@ export interface ApiExpMonthExpMonth extends Schema.CollectionType {
     };
   };
   attributes: {
-    name: Attribute.String &
+    data: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1556,6 +1498,7 @@ export interface ApiFileTypeFileType extends Schema.CollectionType {
     singularName: 'file-type';
     pluralName: 'file-types';
     displayName: 'File_Type';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1566,14 +1509,7 @@ export interface ApiFileTypeFileType extends Schema.CollectionType {
     };
   };
   attributes: {
-    name: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    value: Attribute.String &
+    file: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1621,14 +1557,7 @@ export interface ApiGenderListGenderList extends Schema.CollectionType {
     };
   };
   attributes: {
-    name: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    value: Attribute.String &
+    gender: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1659,69 +1588,6 @@ export interface ApiGenderListGenderList extends Schema.CollectionType {
   };
 }
 
-export interface ApiGenderListSelectGenderListSelect
-  extends Schema.CollectionType {
-  collectionName: 'gender_list_selects';
-  info: {
-    singularName: 'gender-list-select';
-    pluralName: 'gender-list-selects';
-    displayName: 'Gender_List_Select';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    value: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    label: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    name: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::gender-list-select.gender-list-select',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::gender-list-select.gender-list-select',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::gender-list-select.gender-list-select',
-      'oneToMany',
-      'api::gender-list-select.gender-list-select'
-    >;
-    locale: Attribute.String;
-  };
-}
-
 export interface ApiHighChartColumnListHighChartColumnList
   extends Schema.CollectionType {
   collectionName: 'high_chart_column_lists';
@@ -1740,21 +1606,7 @@ export interface ApiHighChartColumnListHighChartColumnList
     };
   };
   attributes: {
-    title: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    data: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    categories: Attribute.String &
+    columnchart: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1792,6 +1644,7 @@ export interface ApiHighChartMultiLineListHighChartMultiLineList
     singularName: 'high-chart-multi-line-list';
     pluralName: 'high-chart-multi-line-lists';
     displayName: 'High_Chart_Multi_Line_List';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1802,14 +1655,7 @@ export interface ApiHighChartMultiLineListHighChartMultiLineList
     };
   };
   attributes: {
-    name: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    data: Attribute.String &
+    chart: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1847,6 +1693,7 @@ export interface ApiHighChartsLineListHighChartsLineList
     singularName: 'high-charts-line-list';
     pluralName: 'high-charts-line-lists';
     displayName: 'HighChartsLine_List';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1857,7 +1704,7 @@ export interface ApiHighChartsLineListHighChartsLineList
     };
   };
   attributes: {
-    series: Attribute.BigInteger &
+    chart: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1906,27 +1753,8 @@ export interface ApiHigherChartsPieListHigherChartsPieList
     };
   };
   attributes: {
-    name: Attribute.String &
+    chart: Attribute.JSON &
       Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    y: Attribute.Decimal &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    sliced: Attribute.Boolean &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    selected: Attribute.Boolean &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1973,21 +1801,7 @@ export interface ApiLangListLangList extends Schema.CollectionType {
     };
   };
   attributes: {
-    value: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    label: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    name: Attribute.String &
+    language: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2025,6 +1839,7 @@ export interface ApiLine3DOptionsListLine3DOptionsList
     singularName: 'line-3d-options-list';
     pluralName: 'line-3d-options-lists';
     displayName: 'Line_3d_Options_List';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -2035,21 +1850,7 @@ export interface ApiLine3DOptionsListLine3DOptionsList
     };
   };
   attributes: {
-    name: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    data: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    categories: Attribute.String &
+    options: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2097,49 +1898,7 @@ export interface ApiLineBarListLineBarList extends Schema.CollectionType {
     };
   };
   attributes: {
-    name: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    type: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    valuesuffix: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    data: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    title: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    subtitle: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    categories: Attribute.String &
+    linebar: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2176,6 +1935,7 @@ export interface ApiLineChart2DLineChart2D extends Schema.CollectionType {
     singularName: 'line-chart-2d';
     pluralName: 'line-chart-2ds';
     displayName: 'Line_Chart_2d';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -2186,21 +1946,7 @@ export interface ApiLineChart2DLineChart2D extends Schema.CollectionType {
     };
   };
   attributes: {
-    name: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    data: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    categories: Attribute.String &
+    chart: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2249,21 +1995,7 @@ export interface ApiMultiLineChart2DMultiLineChart2D
     };
   };
   attributes: {
-    name: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    data: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    categories: Attribute.String &
+    chart: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2318,41 +2050,6 @@ export interface ApiPieChart3DPieChart3D extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    firefox: Attribute.JSON &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    safari: Attribute.JSON &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    opera: Attribute.JSON &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    ie: Attribute.JSON &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    others: Attribute.JSON &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -2394,21 +2091,7 @@ export interface ApiSalutationListSalutationList extends Schema.CollectionType {
     };
   };
   attributes: {
-    value: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    label: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    name: Attribute.String &
+    salutation: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2457,21 +2140,7 @@ export interface ApiStackedColumnListStackedColumnList
     };
   };
   attributes: {
-    title: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    categories: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    series: Attribute.JSON &
+    stackedcolumn: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2519,21 +2188,7 @@ export interface ApiStateListStateList extends Schema.CollectionType {
     };
   };
   attributes: {
-    value: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    label: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    name: Attribute.String &
+    state: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2581,63 +2236,7 @@ export interface ApiTableListTableList extends Schema.CollectionType {
     };
   };
   attributes: {
-    athlete: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    age: Attribute.BigInteger &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    country: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    year: Attribute.BigInteger &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    date: Attribute.Date &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    sport: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    gold: Attribute.BigInteger &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    silver: Attribute.BigInteger &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    total: Attribute.BigInteger &
+    grid: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2674,6 +2273,7 @@ export interface ApiTodoListTodoList extends Schema.CollectionType {
     singularName: 'todo-list';
     pluralName: 'todo-lists';
     displayName: 'Todo_List';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -2684,7 +2284,7 @@ export interface ApiTodoListTodoList extends Schema.CollectionType {
     };
   };
   attributes: {
-    content: Attribute.String &
+    todo: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2732,63 +2332,7 @@ export interface ApiUsersListUsersList extends Schema.CollectionType {
     };
   };
   attributes: {
-    role: Attribute.JSON &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    username: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    email: Attribute.Email &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    provider: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    blocked: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    gender: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    city: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    dob: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    confirmed: Attribute.Boolean &
+    users: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2843,8 +2387,10 @@ declare module '@strapi/types' {
       'api::city-list.city-list': ApiCityListCityList;
       'api::country-list.country-list': ApiCountryListCountryList;
       'api::d3-bar-list.d3-bar-list': ApiD3BarListD3BarList;
+      'api::d3-bar-r-list.d3-bar-r-list': ApiD3BarRListD3BarRList;
       'api::d3-line-list.d3-line-list': ApiD3LineListD3LineList;
       'api::d3-pie-list.d3-pie-list': ApiD3PieListD3PieList;
+      'api::d3-pie-r-list.d3-pie-r-list': ApiD3PieRListD3PieRList;
       'api::done-list.done-list': ApiDoneListDoneList;
       'api::download-file-list.download-file-list': ApiDownloadFileListDownloadFileList;
       'api::drag-and-users-list.drag-and-users-list': ApiDragAndUsersListDragAndUsersList;
@@ -2852,7 +2398,6 @@ declare module '@strapi/types' {
       'api::exp-month.exp-month': ApiExpMonthExpMonth;
       'api::file-type.file-type': ApiFileTypeFileType;
       'api::gender-list.gender-list': ApiGenderListGenderList;
-      'api::gender-list-select.gender-list-select': ApiGenderListSelectGenderListSelect;
       'api::high-chart-column-list.high-chart-column-list': ApiHighChartColumnListHighChartColumnList;
       'api::high-chart-multi-line-list.high-chart-multi-line-list': ApiHighChartMultiLineListHighChartMultiLineList;
       'api::high-charts-line-list.high-charts-line-list': ApiHighChartsLineListHighChartsLineList;

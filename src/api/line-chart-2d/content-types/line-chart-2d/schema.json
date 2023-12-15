@@ -4,7 +4,8 @@
   "info": {
     "singularName": "line-chart-2d",
     "pluralName": "line-chart-2ds",
-    "displayName": "Line_Chart_2d"
+    "displayName": "Line_Chart_2d",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,31 +16,13 @@
     }
   },
   "attributes": {
-    "name": {
+    "chart": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "string",
-      "required": true
-    },
-    "data": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string",
-      "required": true
-    },
-    "categories": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string",
+      "type": "json",
       "required": true
     }
   }

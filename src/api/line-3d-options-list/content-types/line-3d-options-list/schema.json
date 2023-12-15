@@ -4,7 +4,8 @@
   "info": {
     "singularName": "line-3d-options-list",
     "pluralName": "line-3d-options-lists",
-    "displayName": "Line_3d_Options_List"
+    "displayName": "Line_3d_Options_List",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,31 +16,13 @@
     }
   },
   "attributes": {
-    "name": {
+    "options": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "string",
-      "required": true
-    },
-    "data": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string",
-      "required": true
-    },
-    "categories": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string",
+      "type": "json",
       "required": true
     }
   }
