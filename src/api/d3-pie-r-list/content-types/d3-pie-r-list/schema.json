@@ -4,7 +4,8 @@
   "info": {
     "singularName": "d3-pie-r-list",
     "pluralName": "d3-pie-r-lists",
-    "displayName": "D3Pie_R_List"
+    "displayName": "D3Pie_R_List",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -22,6 +23,42 @@
         }
       },
       "type": "json",
+      "required": true
+    },
+    "height": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "type": "biginteger"
+    },
+    "width": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "type": "biginteger"
+    },
+    "innerRadius": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "biginteger",
+      "required": true
+    },
+    "outerRadius": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "biginteger",
       "required": true
     }
   }

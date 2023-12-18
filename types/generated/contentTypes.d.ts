@@ -742,7 +742,21 @@ export interface ApiBarChart3DBarChart3D extends Schema.CollectionType {
     };
   };
   attributes: {
-    chart: Attribute.JSON &
+    data: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    categories: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    name: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1130,6 +1144,7 @@ export interface ApiD3BarRListD3BarRList extends Schema.CollectionType {
     singularName: 'd3-bar-r-list';
     pluralName: 'd3-bar-r-lists';
     displayName: 'D3Bar_R_List';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1141,6 +1156,48 @@ export interface ApiD3BarRListD3BarRList extends Schema.CollectionType {
   };
   attributes: {
     chart: Attribute.JSON &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    height: Attribute.BigInteger &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    width: Attribute.BigInteger &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    source: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    x_title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    y_title: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1243,6 +1300,55 @@ export interface ApiD3PieListD3PieList extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    height: Attribute.BigInteger &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    width: Attribute.BigInteger &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    source: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    x_title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    y_title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    colors: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1273,6 +1379,7 @@ export interface ApiD3PieRListD3PieRList extends Schema.CollectionType {
     singularName: 'd3-pie-r-list';
     pluralName: 'd3-pie-r-lists';
     displayName: 'D3Pie_R_List';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1284,6 +1391,34 @@ export interface ApiD3PieRListD3PieRList extends Schema.CollectionType {
   };
   attributes: {
     chart: Attribute.JSON &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    height: Attribute.BigInteger &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    width: Attribute.BigInteger &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    innerRadius: Attribute.BigInteger &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    outerRadius: Attribute.BigInteger &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1913,7 +2048,21 @@ export interface ApiLine3DOptionsListLine3DOptionsList
     };
   };
   attributes: {
-    options: Attribute.JSON &
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    data: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    categories: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {

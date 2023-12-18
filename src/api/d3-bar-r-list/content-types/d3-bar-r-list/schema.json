@@ -4,7 +4,8 @@
   "info": {
     "singularName": "d3-bar-r-list",
     "pluralName": "d3-bar-r-lists",
-    "displayName": "D3Bar_R_List"
+    "displayName": "D3Bar_R_List",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -22,6 +23,60 @@
         }
       },
       "type": "json",
+      "required": true
+    },
+    "height": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "biginteger",
+      "required": true
+    },
+    "width": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "biginteger",
+      "required": true
+    },
+    "title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "source": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "x_title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "y_title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
       "required": true
     }
   }
