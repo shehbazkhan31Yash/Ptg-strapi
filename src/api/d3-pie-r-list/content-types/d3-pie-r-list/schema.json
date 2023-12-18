@@ -16,7 +16,7 @@
     }
   },
   "attributes": {
-    "chart": {
+    "data": {
       "pluginOptions": {
         "i18n": {
           "localized": true

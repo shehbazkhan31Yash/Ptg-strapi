@@ -742,13 +742,6 @@ export interface ApiBarChart3DBarChart3D extends Schema.CollectionType {
     };
   };
   attributes: {
-    data: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     categories: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -756,7 +749,7 @@ export interface ApiBarChart3DBarChart3D extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    name: Attribute.String &
+    data: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1155,7 +1148,7 @@ export interface ApiD3BarRListD3BarRList extends Schema.CollectionType {
     };
   };
   attributes: {
-    chart: Attribute.JSON &
+    data: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1390,7 +1383,7 @@ export interface ApiD3PieRListD3PieRList extends Schema.CollectionType {
     };
   };
   attributes: {
-    chart: Attribute.JSON &
+    data: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1804,7 +1797,21 @@ export interface ApiHighChartColumnListHighChartColumnList
     };
   };
   attributes: {
-    columnchart: Attribute.JSON &
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    data: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    categories: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1951,7 +1958,14 @@ export interface ApiHigherChartsPieListHigherChartsPieList
     };
   };
   attributes: {
-    chart: Attribute.JSON &
+    data: Attribute.JSON &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2110,7 +2124,28 @@ export interface ApiLineBarListLineBarList extends Schema.CollectionType {
     };
   };
   attributes: {
-    linebar: Attribute.JSON &
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    subtitle: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    categories: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    series: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2158,7 +2193,14 @@ export interface ApiLineChart2DLineChart2D extends Schema.CollectionType {
     };
   };
   attributes: {
-    chart: Attribute.JSON &
+    categories: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    data: Attribute.JSON &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2207,7 +2249,14 @@ export interface ApiMultiLineChart2DMultiLineChart2D
     };
   };
   attributes: {
-    chart: Attribute.JSON &
+    data: Attribute.JSON &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    categories: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -2352,7 +2401,21 @@ export interface ApiStackedColumnListStackedColumnList
     };
   };
   attributes: {
-    stackedcolumn: Attribute.JSON &
+    series: Attribute.JSON &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    categories: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
