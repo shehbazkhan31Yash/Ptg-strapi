@@ -1079,6 +1079,27 @@ export interface ApiD3BarListD3BarList extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    margin: Attribute.BigInteger &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    start: Attribute.BigInteger &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    end: Attribute.BigInteger &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
