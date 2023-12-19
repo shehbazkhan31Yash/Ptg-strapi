@@ -2358,41 +2358,6 @@ export interface ApiPieChart3DPieChart3D extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    firefox: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    ie: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    safari: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    opera: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    others: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -2624,6 +2589,53 @@ export interface ApiTableListTableList extends Schema.CollectionType {
   };
 }
 
+export interface ApiTodoAListTodoAList extends Schema.CollectionType {
+  collectionName: 'todo_a_lists';
+  info: {
+    singularName: 'todo-a-list';
+    pluralName: 'todo-a-lists';
+    displayName: 'Todo_A_List';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    todo: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::todo-a-list.todo-a-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::todo-a-list.todo-a-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::todo-a-list.todo-a-list',
+      'oneToMany',
+      'api::todo-a-list.todo-a-list'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiTodoListTodoList extends Schema.CollectionType {
   collectionName: 'todo_lists';
   info: {
@@ -2770,6 +2782,7 @@ declare module '@strapi/types' {
       'api::stacked-column-list.stacked-column-list': ApiStackedColumnListStackedColumnList;
       'api::state-list.state-list': ApiStateListStateList;
       'api::table-list.table-list': ApiTableListTableList;
+      'api::todo-a-list.todo-a-list': ApiTodoAListTodoAList;
       'api::todo-list.todo-list': ApiTodoListTodoList;
       'api::users-list.users-list': ApiUsersListUsersList;
     }
