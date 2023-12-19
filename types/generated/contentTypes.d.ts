@@ -924,6 +924,53 @@ export interface ApiCheckboxListCheckboxList extends Schema.CollectionType {
   };
 }
 
+export interface ApiCityAListCityAList extends Schema.CollectionType {
+  collectionName: 'city_a_lists';
+  info: {
+    singularName: 'city-a-list';
+    pluralName: 'city-a-lists';
+    displayName: 'City_A_List';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    data: Attribute.JSON &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::city-a-list.city-a-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::city-a-list.city-a-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::city-a-list.city-a-list',
+      'oneToMany',
+      'api::city-a-list.city-a-list'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiCityListCityList extends Schema.CollectionType {
   collectionName: 'city_lists';
   info: {
@@ -2311,6 +2358,41 @@ export interface ApiPieChart3DPieChart3D extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    firefox: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ie: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    safari: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    opera: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    others: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -2659,6 +2741,7 @@ declare module '@strapi/types' {
       'api::card-list.card-list': ApiCardListCardList;
       'api::checkbox-array-list.checkbox-array-list': ApiCheckboxArrayListCheckboxArrayList;
       'api::checkbox-list.checkbox-list': ApiCheckboxListCheckboxList;
+      'api::city-a-list.city-a-list': ApiCityAListCityAList;
       'api::city-list.city-list': ApiCityListCityList;
       'api::country-list.country-list': ApiCountryListCountryList;
       'api::d3-bar-list.d3-bar-list': ApiD3BarListD3BarList;
