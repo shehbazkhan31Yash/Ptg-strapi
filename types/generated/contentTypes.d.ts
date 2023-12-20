@@ -1489,6 +1489,100 @@ export interface ApiD3PieRListD3PieRList extends Schema.CollectionType {
   };
 }
 
+export interface ApiDemoDataListDemoDataList extends Schema.CollectionType {
+  collectionName: 'demo_data_lists';
+  info: {
+    singularName: 'demo-data-list';
+    pluralName: 'demo-data-lists';
+    displayName: 'Demo_Data_List';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    data: Attribute.JSON &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::demo-data-list.demo-data-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::demo-data-list.demo-data-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::demo-data-list.demo-data-list',
+      'oneToMany',
+      'api::demo-data-list.demo-data-list'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiDemoData1ListDemoData1List extends Schema.CollectionType {
+  collectionName: 'demo_data1_lists';
+  info: {
+    singularName: 'demo-data1-list';
+    pluralName: 'demo-data1-lists';
+    displayName: 'Demo_Data1_List';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    data: Attribute.JSON &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::demo-data1-list.demo-data1-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::demo-data1-list.demo-data1-list',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::demo-data1-list.demo-data1-list',
+      'oneToMany',
+      'api::demo-data1-list.demo-data1-list'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiDoneListDoneList extends Schema.CollectionType {
   collectionName: 'done_lists';
   info: {
@@ -2761,6 +2855,8 @@ declare module '@strapi/types' {
       'api::d3-line-list.d3-line-list': ApiD3LineListD3LineList;
       'api::d3-pie-list.d3-pie-list': ApiD3PieListD3PieList;
       'api::d3-pie-r-list.d3-pie-r-list': ApiD3PieRListD3PieRList;
+      'api::demo-data-list.demo-data-list': ApiDemoDataListDemoDataList;
+      'api::demo-data1-list.demo-data1-list': ApiDemoData1ListDemoData1List;
       'api::done-list.done-list': ApiDoneListDoneList;
       'api::download-file-list.download-file-list': ApiDownloadFileListDownloadFileList;
       'api::drag-and-users-list.drag-and-users-list': ApiDragAndUsersListDragAndUsersList;
