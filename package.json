@@ -1,5 +1,5 @@
 {
-  "name": "ptg-strapi",
+  "name": "ptg-ui-strapi",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -9,13 +9,13 @@
     "build": "strapi build",
     "strapi": "strapi"
   },
+  "devDependencies": {},
   "dependencies": {
-    "@strapi/plugin-cloud": "4.15.4",
-    "@strapi/plugin-i18n": "4.15.4",
-    "@strapi/plugin-users-permissions": "4.15.4",
-    "@strapi/strapi": "4.15.4",
-    "better-sqlite3": "8.6.0",
-    "mysql": "^2.18.1",
+    "@strapi/strapi": "4.16.2",
+    "@strapi/plugin-users-permissions": "4.16.2",
+    "@strapi/plugin-i18n": "4.16.2",
+    "@strapi/plugin-cloud": "4.16.2",
+    "mysql": "2.18.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "5.3.4",
@@ -25,7 +25,7 @@
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "2bb28489-7e92-4ede-95a2-1f6110d98725"
+    "uuid": "120a1975-956b-43e3-be77-d1806333f67d"
   },
   "engines": {
     "node": ">=18.0.0 <=20.x.x",
