@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "custom_user_tables",
+  "info": {
+    "singularName": "custom-user-table",
+    "pluralName": "custom-user-tables",
+    "displayName": "Custom_user_table"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "string"
+    },
+    "username": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "age": {
+      "type": "integer"
+    }
+  }
+}
