@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_checks",
+  "info": {
+    "singularName": "user-check",
+    "pluralName": "user-checks",
+    "displayName": "User-check"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "dummyField": {
+      "type": "string"
+    }
+  }
+}
