@@ -1,9 +1,13 @@
-'use strict';
-
-/**
- * custom-user-table router
- */
-
-const { createCoreRouter } = require('@strapi/strapi').factories;
-
-module.exports = createCoreRouter('api::custom-user-table.custom-user-table');
+module.exports = {
+  routes: [
+    {
+      method: "POST",
+      path: "/cutom-user-table/create-custom-user",
+      handler: "cutom-user-table.createCustomUser",
+      config: {
+        policies: [], // You can add role-based policies here
+        auth: false, // Set to true if you want auth
+      },
+    },
+  ],
+};
